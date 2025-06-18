@@ -19,14 +19,13 @@ You should comment out all portions of your portfolio that you have not complete
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1MOVeSZ_zO0?si=YhtbP7l8hZccBY3d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-**Description:**
+## Description
 For my starter project at Bluestamp, I chose the RGB color sliders. Before my experience at Bluestamp, I had never worked with circuits, so I chose the RGB color sliders to learn about circuits and soldering irons. I thought it would be a good idea to familiarize myself with circuits and Arduinos because my final project uses them as well. For my RGB color sliders, I soldered the pieces on using a soldering iron. The way it works is that if you push one of the red, green, and blue sliders, it sends a signal to the LED, resulting in the color of the light changing. Each of the sliders has a small resistor near it to prevent the circuit from short-circuiting.
 
-**Challenges:**
+## Challenges
 When I finished soldering everything on my circuit, it was time to start testing my project. Unfortunately, none of the sliders worked, and the LED did not light up. Eventually, I did a multimeter connectivity test to see if all my soldering was perfect. When all of the connections made a buzz, it was then evident that I did not position the LED in the correct orientation. Then, I tried to desolder the joints, but without any luck. I had to redo the entire project, but, fortunately, the second time I made the RGB color sliders, they were fully functional.
 
-**Next Steps:**
+## Next Steps
 Now that this project is completed, I have a better understanding of circuits, soldering, and LEDs.
 
 # Final Milestone
