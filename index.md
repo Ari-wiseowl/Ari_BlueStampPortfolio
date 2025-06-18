@@ -11,9 +11,8 @@ You should comment out all portions of your portfolio that you have not complete
 |:--:|:--:|:--:|:--:|
 | Ari S | The Harker School | Computer Science | Incoming Eighth Grader
 
-**Replace the BlueStamp logo below with an image of yourself and your completed project. Follow the guide [here](https://tomcam.github.io/least-github-pages/adding-images-github-pages-site.html) if you need help.**
-
-![Headstone Image](logo.svg)
+# Starter Project Picture:
+![Headstone Image](starter_project_ari.png)
   
 # Starter Project Milestone
 
@@ -27,6 +26,9 @@ When I finished soldering everything on my circuit, it was time to start testing
 
 ## Next Steps
 Now that this project is completed, I have a better understanding of circuits, soldering, and LEDs.
+
+# Main Project Picture:
+![Headstone Image](logo.svg)
 
 # Final Milestone
 
