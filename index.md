@@ -58,9 +58,16 @@ For your second milestone, explain what you've worked on since your previous mil
 
 # Testing the Servos
 
-**Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4fMHdtYCE2Y?si=LOW1Mc4TG0xlK4kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CaCazFBhYKs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+## Description
+For my main project at Bluestamp, I chose to do the Three Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep", which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. After I finished successfully downloading and implementing the code, I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I inmplement the main code for the entire robot arm.
+
+## Challenges
+Because my code could not find the right port for the arduino app to connect to, I had to restart my computer. Then, my computer could find the non-bluetooth port that I can successfully use.
+
+## New Steps
+For my next milestone I will finish building my 3 joint robotic arm. To complete my entire project, I will have to also make code for the arm to acually move.
 
 For your first milestone, describe what your project is and how you plan to build it. You can include:
 - An explanation about the different components of your project and how they will all integrate together
