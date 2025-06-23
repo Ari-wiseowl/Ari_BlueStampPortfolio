@@ -11,22 +11,6 @@ You should comment out all portions of your portfolio that you have not complete
 |:--:|:--:|:--:|:--:|
 | Ari S | The Harker School | Computer Science | Incoming Eighth Grader
 
-# Starter Project Picture:
-![Headstone Image](starter_project_ari.png)
-  
-# Starter Project Milestone
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1MOVeSZ_zO0?si=YhtbP7l8hZccBY3d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## Description
-For my starter project at Bluestamp, I chose the RGB color sliders. Before my experience at Bluestamp, I had never worked with circuits, so I chose the RGB color sliders to learn about circuits and soldering irons. I thought it would be a good idea to familiarize myself with circuits and Arduinos because my final project uses them as well. For my RGB color sliders, I soldered the pieces on using a soldering iron. The way it works is that if you push one of the red, green, and blue sliders, it sends a signal to the LED, resulting in the color of the light changing. Each of the sliders has a small resistor near it to prevent the circuit from short-circuiting.
-
-## Challenges
-When I finished soldering everything on my circuit, it was time to start testing my project. Unfortunately, none of the sliders worked, and the LED did not light up. Eventually, I did a multimeter connectivity test to see if all my soldering was perfect. When all of the connections made a buzz, it was then evident that I did not position the LED in the correct orientation. Then, I tried to desolder the joints, but without any luck. I had to redo the entire project, but, fortunately, the second time I made the RGB color sliders, they were fully functional.
-
-## Next Steps
-Now that this project is completed, I have a better understanding of circuits, soldering, and LEDs.
-
 # Main Project Picture:
 ![Headstone Image](logo.svg)
 
@@ -42,8 +26,6 @@ For your final milestone, explain the outcome of your project. Key details to in
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE
 
-
-
 # Second Milestone
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
@@ -56,24 +38,85 @@ For your second milestone, explain what you've worked on since your previous mil
 - Previous challenges you faced that you overcame
 - What needs to be completed before your final milestone 
 
-# Testing the Servos
+# First Milestone: Testing the Servos
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4fMHdtYCE2Y?si=LOW1Mc4TG0xlK4kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
-For my main project at Bluestamp, I chose to do the Three Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep", which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. After I finished successfully downloading and implementing the code, I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I inmplement the main code for the entire robot arm.
+For my main project at Bluestamp, I chose to do the Three-Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep," which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. After I finished successfully downloading and implementing the code, I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I implemented the main code for the entire robot arm.
+
+### Sweep Code:
+```
+#include <Servo.h>
+
+Servo myservo;  // create Servo object to control a servo
+// twelve Servo objects can be created on most boards
+
+int pos = 0;    // variable to store the servo position
+
+void setup() {
+  myservo.attach(10);  // attaches the servo on pin 9 to the Servo object
+}
+
+void loop() {
+  for (pos = 0; pos <= 180; pos += 1) { // goes from 0 degrees to 180 degrees
+    // in steps of 1 degree
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15 ms for the servo to reach the position
+  }
+  for (pos = 180; pos >= 0; pos -= 1) { // goes from 180 degrees to 0 degrees
+    myservo.write(pos);              // tell servo to go to position in variable 'pos'
+    delay(15);                       // waits 15 ms for the servo to reach the position
+  }
+}
+```
+
+### Writing to 90° Code:
+```
+#include<Servo.h>
+Servo myservo1;  // Create a servo class
+Servo myservo2;  // Create a servo class
+Servo myservo3;  // Create a servo class
+Servo myservo4;  // Create a servo class
+
+void setup() {  
+myservo1.attach(4);  //Set the servo control pin as D4
+myservo2.attach(5);  //Set the servo control pin as D5
+myservo3.attach(6);  //Set the servo control pin as D6
+myservo4.attach(7);  //Set the servo control pin as D7
+delay(100);          //delay 100ms 
+}
+
+void loop() {
+ myservo1.write(90);  //The servo is 90 degrees
+ myservo2.write(90);  //The servo is 90 degrees
+ myservo3.write(90);  //The servo is 90 degrees
+ myservo4.write(90);  //The servo is 90 degrees
+ delay(1000);
+ }
+```
 
 ## Challenges
-Because my code could not find the right port for the arduino app to connect to, I had to restart my computer. Then, my computer could find the non-bluetooth port that I can successfully use.
+Because my code could not find the right port for the Arduino app to connect to, I had to restart my computer. Then, my computer could find the non-Bluetooth port that I can successfully use.
 
 ## New Steps
-For my next milestone I will finish building my 3 joint robotic arm. To complete my entire project, I will have to also make code for the arm to acually move.
+For my next milestone, I will finish building my 3-joint robotic arm. To complete my entire project, I will also have to make code for the arm to actually move.
 
-For your first milestone, describe what your project is and how you plan to build it. You can include:
-- An explanation about the different components of your project and how they will all integrate together
-- Technical progress you've made so far
-- Challenges you're facing and solving in your future milestones
-- What your plan is to complete your project
+# Starter Project Picture:
+![Headstone Image](starter_project_ari.png)
+  
+# Starter Project Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1MOVeSZ_zO0?si=YhtbP7l8hZccBY3d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Description
+For my starter project at Bluestamp, I chose the RGB color sliders. Before my experience at Bluestamp, I had never worked with circuits, so I chose the RGB color sliders to learn about circuits and soldering irons. I thought it would be a good idea to familiarize myself with circuits and Arduinos because my final project uses them as well. For my RGB color sliders, I soldered the pieces on using a soldering iron. The way it works is that if you push one of the red, green, and blue sliders, it sends a signal to the LED, resulting in the color of the light changing. Each of the sliders has a small resistor near it to prevent the circuit from short-circuiting.
+
+## Challenges
+When I finished soldering everything on my circuit, it was time to start testing my project. Unfortunately, none of the sliders worked, and the LED did not light up. Eventually, I did a multimeter connectivity test to see if all my soldering was perfect. When all of the connections made a buzz, it was then evident that I did not position the LED in the correct orientation. Then, I tried to desolder the joints, but without any luck. I had to redo the entire project, but, fortunately, the second time I made the RGB color sliders, they were fully functional.
+
+## Next Steps
+Now that this project is completed, I have a better understanding of circuits, soldering, and LEDs.
 
 # Schematics 
 Here's where you'll put images of your schematics. [Tinkercad](https://www.tinkercad.com/blog/official-guide-to-tinkercad-circuits) and [Fritzing](https://fritzing.org/learning/) are both great resoruces to create professional schematic diagrams, though BSE recommends Tinkercad becuase it can be done easily and for free in the browser. 
