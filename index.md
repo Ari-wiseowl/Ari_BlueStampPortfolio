@@ -33,10 +33,10 @@ For your final milestone, explain the outcome of your project. Key details to in
 <iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Description
-For my main project at Bluestamp, I chose to do the Three-Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep," which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. To download it on my computer, I went to File, then clicked on the Servo code to get code that makes the servo arm sweep. After I finished successfully downloading and implementing the code, I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I implemented the main code for the entire robot arm. I got the 90° code fromt the portfolio of Cokoino, the maker of the Three-Joint Robotic Arm kit. Proper assembly at this stage is essential for the robot arm to follow controller commands accurately.
+To complete my second milestone, finishing building the robotic arm, I started assemhling the body of the robotic arm. I assembled the base of the arm which includes the battery and the nano shield. I switched out the Lithium Ion batteries to AA batteries. Therefore, I had to tape it on to the base since there was no dedicated spot. While I was assembling the first joint of the robotic arm, two pieces broke off while I assembling them because I screwed on the servo screws too tightly. First, we tried to dimension the broken pieces so that we could 3D print a new piece. Luckily, we were able to find replacement parts and I could complete assembling the rest of the arm. 
 
 ## Challenges
-Because my code could not find the right port for the Arduino app to connect to, I had to restart my computer. Then, my computer could find the non-Bluetooth port that I can successfully use.
+Because my code could not find the right port for the Arduino app to connect to, I had to restart my computer. Then, my computer could find the non-Bluetooth port that I can successfully use. Another challenge I faced while coding was that, 
 
 ## New Steps
 For my next milestone, I will finish building my 3-joint robotic arm. To complete my entire project, I will also have to make code for the arm to actually move.
@@ -47,7 +47,9 @@ For my next milestone, I will finish building my 3-joint robotic arm. To complet
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4fMHdtYCE2Y?si=LOW1Mc4TG0xlK4kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
-For my main project at Bluestamp, I chose to do the Three-Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep," which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. To download it on my computer, I went to File, then clicked on the Servo code to get code that makes the servo arm sweep. After I finished successfully downloading and implementing the code, I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I implemented the main code for the entire robot arm. I got the 90° code fromt the portfolio of Cokoino, the maker of the Three-Joint Robotic Arm kit. Proper assembly at this stage is essential for the robot arm to follow controller commands accurately.
+For my main project at Bluestamp, I chose to do the Three-Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep," which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. To download it on my computer, I went to File, then clicked on the Servo code to get code that makes the servo arm sweep. After I finished successfully downloading and implementing the code, I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I implemented the main code for the entire robot arm. I got the 90° code fromt the portfolio of Cokoino, the maker of the Three-Joint Robotic Arm kit. Proper assembly at this stage is essential for the robot arm to follow controller commands accurately. 
+
+The next step was to test the joystick by using the Cokoino joystick test code. The code reads what the joystick outputs (x, y and z values). For my left joystick, GND, 5V were connected to A0. The VRx pin was connected to the signal pin A0. The VRy pin was connected to the signal pin A1. The variable orientations of the joystick correspond to different voltages that get sent to the ADC pins on the NANO and get converted to digital values that I can see. If the values for x and y changes when someone moves the joystick, that means that the joystick is working properly. 
 
 ### Sweep Code:
 ```
@@ -125,7 +127,9 @@ Now that this project is completed, I have a better understanding of circuits, s
 # Schematics 
 ## Testing Servos Schematics:
 ![Headstone Image](circuit_image.svg)
-##
+## Robotic Arm Schematics:
+![Headstone Image](RobticArmSchematics.png)
+  
 
 # Code
 Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
