@@ -20,26 +20,69 @@ You should comment out all portions of your portfolio that you have not complete
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+## Description
+To make sure that the joystick accually controls the robot arm, I had to make code. I coded my code per joystick. I coded the left joystick first, which controls motor of the base and the second joint. I coded it so that if I turn the joystick left and right it twists the base left and right, and if I turn the joystick up and down, the second joint bends down and up. Then I coded the right joystick which controls thrid joint and the claw. The left and right movements control the claw and the up and down movements control the third joint. First I had problems connecting my computer to my arduino nano board, so I had to replace the USB-A TO USB-C adapter becuase it was not working.
+
+## Challenges
+I had trouble connecting my arduino nano to my computer becuase my computer kept on disconnecting from the port. First I changed out my wire connecting my arduino and my computer, but that did not change anything. Then, I changed out the adapter, and it suddently started connecting. Therefore, I was able to implement my code to the arduino so that I could control the robotic arm using the joystick.
+
+After I completed my first revision of my code, the robot could not move left or down if the clamp has already been closed. To fix that I had to switch up the direction of the clamp so that instead of the right movement closing the clamp, the left movement closes it. After that revision was implemented, the robot could move seamlessly without any problems.
+
 For your final milestone, explain the outcome of your project. Key details to include are:
 - What you've accomplished since your previous milestone
 - What your biggest challenges and triumphs were at BSE
 - A summary of key topics you learned about
 - What you hope to learn in the future after everything you've learned at BSE
 
+## Next Steps
+**Modifications**
+- Make the Robot Dance with the Joystick button
+- I also want to control it with my computer (if I type "Dance" on the terminal, the robot starts dancing)
+- Add googly eyes on the claw so that it the eyes get wider apart when the claw opens.
+
 # Second Milestone: Building the Robotic Arm
 
 **Don't forget to replace the text below with the embedding for your milestone video. Go to Youtube, click Share -> Embed, and copy and paste the code to replace what's below.**
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/y3VAmNlER5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uqtCaf1NxMw?si=jvoUUuXZFAiw9Wqr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
-To complete my second milestone, finishing building the robotic arm, I started assemhling the body of the robotic arm. I assembled the base of the arm which includes the battery and the nano shield. I switched out the Lithium Ion batteries to AA batteries. Therefore, I had to tape it on to the base since there was no dedicated spot. While I was assembling the first joint of the robotic arm, two pieces broke off while I assembling them because I screwed on the servo screws too tightly. First, we tried to dimension the broken pieces so that we could 3D print a new piece. Luckily, we were able to find replacement parts and I could complete assembling the rest of the arm. 
+To complete my second milestone, finishing building the robotic arm, I started assemhling the body of the robotic arm. I assembled the base of the arm which includes the battery and the nano shield. I switched out the Lithium Ion batteries to AA batteries. Therefore, I had to tape it on to the base since there was no dedicated spot.
+
+I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I implemented the main code for the entire robot arm. I had to set all of them to 90° so the servos turn to the correct direction when I move the joystick. At first, I did not know how to calibrate all my servos to 90°, but then I found code from the portfolio of Cokoino, the maker of the Three-Joint Robotic Arm kit. Since I forgot to set my base servo to 90° before I implemented it in my robot arm, so I had to take many parts off to fix the issue.
+
+While I was assembling the second joint of the robotic arm, two pieces broke off while I assembling them because I screwed on the servo screws too tightly. First, we tried to dimension the broken pieces so that we could 3D print a new piece. Luckily, we were able to find replacement parts and I could complete assembling the rest of the arm.
+
+### Writing to 90° Code:
+```
+#include<Servo.h>
+Servo myservo1;  // Create a servo class
+Servo myservo2;  // Create a servo class
+Servo myservo3;  // Create a servo class
+Servo myservo4;  // Create a servo class
+
+void setup() {  
+myservo1.attach(4);  //Set the servo control pin as D4
+myservo2.attach(5);  //Set the servo control pin as D5
+myservo3.attach(6);  //Set the servo control pin as D6
+myservo4.attach(7);  //Set the servo control pin as D7
+delay(100);          //delay 100ms 
+}
+
+void loop() {
+ myservo1.write(90);  //The servo is 90 degrees
+ myservo2.write(90);  //The servo is 90 degrees
+ myservo3.write(90);  //The servo is 90 degrees
+ myservo4.write(90);  //The servo is 90 degrees
+ delay(1000);
+ }
+```
 
 ## Challenges
-Because my code could not find the right port for the Arduino app to connect to, I had to restart my computer. Then, my computer could find the non-Bluetooth port that I can successfully use. Another challenge I faced while coding was that, 
+While I was implementing the second joint of my robotic arm, two pieces that hold the entirety of the arm broke while I was attaching a servo on. Initially, I tried to fix it by superglueing it on, but the superglue did not dry as fast as I wanted it to and left bumpy white streaks all over the plastic pieces. Then, I realized that I would have to print the parts in order for me to finsh my project. I tried to look for online measurements so I could 3D print the part, but there seemed to not be any detailed measurements. So, I decided to measure them myself. I could not find an electrical caliber, so I tried to use a manual caliber to get measurements so I could 3D print a piece using Autodesk Fusion 360. Fortunately, I was able to find replacement parts from another kit and I could complete assembling the rest of the arm.
 
 ## New Steps
-For my next milestone, I will finish building my 3-joint robotic arm. To complete my entire project, I will also have to make code for the arm to actually move.
+For my next milestone, I will have to code the robotic arm so that the joystick can control the arm's movements.
 
 
 # First Milestone: Testing the Servos
@@ -47,7 +90,7 @@ For my next milestone, I will finish building my 3-joint robotic arm. To complet
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4fMHdtYCE2Y?si=LOW1Mc4TG0xlK4kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
-For my main project at Bluestamp, I chose to do the Three-Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep," which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. To download it on my computer, I went to File, then clicked on the Servo code to get code that makes the servo arm sweep. After I finished successfully downloading and implementing the code, I had to write all of the servos to 90° so that all of the servos would turn to the correct direction when I implemented the main code for the entire robot arm. I got the 90° code fromt the portfolio of Cokoino, the maker of the Three-Joint Robotic Arm kit. Proper assembly at this stage is essential for the robot arm to follow controller commands accurately. 
+For my main project at Bluestamp, I chose to do the Three-Joint Robotic Arm. I chose it because it seemed an interesting way to show what I will learn here at Bluestamp. To test the servos, I needed to download this code called "Sweep," which makes the servo's arm move left and right in a sweeping motion, just as the name suggests. To download it on my computer, I went to File, then clicked on the Servo code to get code that makes the servo arm sweep. Proper assembly at this stage is essential for the robot arm to follow controller commands accurately. 
 
 The next step was to test the joystick by using the Cokoino joystick test code. The code reads what the joystick outputs (x, y and z values). For my left joystick, GND, 5V were connected to A0. The VRx pin was connected to the signal pin A0. The VRy pin was connected to the signal pin A1. The variable orientations of the joystick correspond to different voltages that get sent to the ADC pins on the NANO and get converted to digital values that I can see. If the values for x and y changes when someone moves the joystick, that means that the joystick is working properly. 
 
@@ -75,31 +118,6 @@ void loop() {
     delay(15);                       // waits 15 ms for the servo to reach the position
   }
 }
-```
-
-### Writing to 90° Code:
-```
-#include<Servo.h>
-Servo myservo1;  // Create a servo class
-Servo myservo2;  // Create a servo class
-Servo myservo3;  // Create a servo class
-Servo myservo4;  // Create a servo class
-
-void setup() {  
-myservo1.attach(4);  //Set the servo control pin as D4
-myservo2.attach(5);  //Set the servo control pin as D5
-myservo3.attach(6);  //Set the servo control pin as D6
-myservo4.attach(7);  //Set the servo control pin as D7
-delay(100);          //delay 100ms 
-}
-
-void loop() {
- myservo1.write(90);  //The servo is 90 degrees
- myservo2.write(90);  //The servo is 90 degrees
- myservo3.write(90);  //The servo is 90 degrees
- myservo4.write(90);  //The servo is 90 degrees
- delay(1000);
- }
 ```
 
 ## Challenges
