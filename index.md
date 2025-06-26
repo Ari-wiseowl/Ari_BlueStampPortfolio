@@ -28,12 +28,6 @@ I had trouble connecting my arduino nano to my computer becuase my computer kept
 
 After I completed my first revision of my code, the robot could not move left or down if the clamp has already been closed. To fix that I had to switch up the direction of the clamp so that instead of the right movement closing the clamp, the left movement closes it. After that revision was implemented, the robot could move seamlessly without any problems.
 
-For your final milestone, explain the outcome of your project. Key details to include are:
-- What you've accomplished since your previous milestone
-- What your biggest challenges and triumphs were at BSE
-- A summary of key topics you learned about
-- What you hope to learn in the future after everything you've learned at BSE
-
 ## Next Steps
 **Modifications**
 - Make the Robot Dance with the Joystick button
