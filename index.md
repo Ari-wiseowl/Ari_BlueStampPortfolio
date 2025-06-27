@@ -244,14 +244,14 @@ Don't forget to place the link of where to buy each component inside the quotati
 |:--:|:--:|:--:|:--:|
 | 3-Joint Robotic Arm Kit | Has all the materials for building the robotic arm | $49.99 | <a href="https://www.amazon.com/LK-COKOINO-Compliment-Engineering-Technology/dp/B081FG1JQ1?ref_=ast_sto_dp"> Link </a> |
 | 5 AA Battery Holder with Wires | Gives power to to the whole robotic arm | $4.00 | <a href="https://www.amazon.com/LampVPath-Battery-Holder-Leads-Wires/dp/B07WRQ44YK/ref=asc_df_B07WRQ44YK?mcid=802884bb72b83218ac1b54c06bf994d4&hvocijid=6360277807138455168-B07WRQ44YK-&hvexpln=73&tag=hyprod-20&linkCode=df0&hvadid=721245378154&hvpos=&hvnetw=g&hvrand=6360277807138455168&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9032171&hvtargid=pla-2281435178578&psc=1"> Link </a> |
-| 4-Pack of MG90S Servos | Moves the Arm | $13.99 | <a href="https://www.amazon.com/Miuzei-Geared-Helicopter-Arduino-Project/dp/B0CP98TZJ2/ref=sr_1_1_sspa?crid=2MOTRZCYN1HHV&dib=eyJ2IjoiMSJ9.y3NpALPj53l5xBEZ3oaI_C6wrGxS4g2PIQCl0C52vtd23l-h6gs_2tWiOCtFRLYFvWWGvU6Sxaq-Yrq3vKJ3PL61EYaTyUVjc4BoMow6c2qdXIzWfCHUwFtSq1BLowtUo82QM0DPUvksjGDI0ukQBHZhnKvtGvyiysxTWqHZQNi_kUw89CQOboD-glyRzYTaSCr4dmU87GjFMWZ8B9M5joOJSJUDOdZDP6BbV6R6-XbHorrW-eYU7fahqirRsYyYAr4MPasv6ohbSfU5aGE947GeZ5fWgFtBoPCE_Ez_HA8.KgR6MxpkYzLw3mya5l3FRXZJpCVwe6bW3ocHpgF1HFs&dib_tag=se&keywords=4%2Bpack%2BMG90S%2Bservo&qid=1751058584&sprefix=4%2Bpack%2Bmg90s%2Bservo%2Caps%2C147&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Link </a> |
+| * 4-Pack of MG90S Servos | Moves the Arm | $13.99 | <a href="https://www.amazon.com/Miuzei-Geared-Helicopter-Arduino-Project/dp/B0CP98TZJ2/ref=sr_1_1_sspa?crid=2MOTRZCYN1HHV&dib=eyJ2IjoiMSJ9.y3NpALPj53l5xBEZ3oaI_C6wrGxS4g2PIQCl0C52vtd23l-h6gs_2tWiOCtFRLYFvWWGvU6Sxaq-Yrq3vKJ3PL61EYaTyUVjc4BoMow6c2qdXIzWfCHUwFtSq1BLowtUo82QM0DPUvksjGDI0ukQBHZhnKvtGvyiysxTWqHZQNi_kUw89CQOboD-glyRzYTaSCr4dmU87GjFMWZ8B9M5joOJSJUDOdZDP6BbV6R6-XbHorrW-eYU7fahqirRsYyYAr4MPasv6ohbSfU5aGE947GeZ5fWgFtBoPCE_Ez_HA8.KgR6MxpkYzLw3mya5l3FRXZJpCVwe6bW3ocHpgF1HFs&dib_tag=se&keywords=4%2Bpack%2BMG90S%2Bservo&qid=1751058584&sprefix=4%2Bpack%2Bmg90s%2Bservo%2Caps%2C147&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1"> Link </a> |
 
-* = included in kit
+'*' = included in kit
 
 # Other Resources/Examples
 One of the best parts about Github is that you can view how other people set up their own work. Here are some past BSE portfolios that are awesome examples. You can view how they set up their portfolio, and you can view their index.md files to understand how they implemented different portfolio components.
 - [Cokoino Github](https://github.com/Cokoino/CKK0006)
-- [Example 2](https://sviatil0.github.io/Sviatoslav_BSE/)
+- [Bluestamp Student Wiki](https://sites.google.com/bluestampengineering.com/student-wiki/student-resources)
 - [Example 3](https://arneshkumar.github.io/arneshbluestamp/)
 
 To watch the BSE tutorial on how to create a portfolio, click here.
