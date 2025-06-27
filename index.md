@@ -1,11 +1,5 @@
 # Three Joint Robotic Arm
-Replace this text with a brief description (2-3 sentences) of your project. This description should draw the reader in and make them interested in what you've built. You can include what the biggest challenges, takeaways, and triumphs from completing the project were. As you complete your portfolio, remember your audience is less familiar than you are with all that your project entails!
-
-You should comment out all portions of your portfolio that you have not completed yet, as well as any instructions:
-```HTML 
-<!--This is an HTML comment in Markdown -->
-<!--Anything between these symbols will not render on the published site -->
-```
+//KSIIBIIDI
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
@@ -144,19 +138,106 @@ Now that this project is completed, I have a better understanding of circuits, s
   
 
 # Code
-Here's where you'll put your code. The syntax below places it into a block of code. Follow the guide [here]([url](https://www.markdownguide.org/extended-syntax/)) to learn how to customize it to your project needs. 
 
-```c++
-void setup() {
-  // put your setup code here, to run once:
-  Serial.begin(9600);
-  Serial.println("Hello World!");
+```
+#include <Servo.h>
+
+int basecurpos = 90;
+int joint2curpos = 90;
+int joint3curpos = 90;
+int clawcurpos = 90;
+Servo baseservo4;
+Servo joint25;
+Servo joint36;
+Servo claw7;
+//int curpos; I don't think this does anything but just to make sure im commenting it out
+int countl = 0;
+
+void setup() { 
+  baseservo4.attach(4);
+  joint25.attach(5); 
+  joint36.attach(6);
+  claw7.attach(7);
+} 
+
+void dance() {
+  baseservo4.write(90); //set all the motors to the origional position so it is easier to move the robotic arm
+  joint25.write(90); //this is not affected if the button is pressed to make it stop or not
+  joint36.write(90);
+  claw7.write(90)
+  
+  if (countl % 2 == 1) {
+    for (int i = 90) {
+      //ddd
+    }
+    baseservo4.write(90);
+    countl++;
+  }
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+void loop(){
+  baseservo4.write(basecurpos);
+  joint25.write(joint2curpos);
+  joint36.write(joint3curpos);
+  claw7.write(clawcurpos);
 
+  //left joystick
+    int xlvalue = 0; 
+    int ylvalue = 0;
+    xlvalue = analogRead(A0);  
+    Serial.println(xlvalue);
+    ylvalue = analogRead(A1);
+    Serial.println(ylvalue);
+    pushlvalue = analogRead(11)
+    //base 
+    if (ylvalue == 0) {
+      baseservo4.write(basecurpos - 5);
+      basecurpos -= 5;
+    } 
+    if (ylvalue == 1023) {
+      baseservo4.write(basecurpos + 5);
+      basecurpos += 5;
+    }
+
+    //joint 2
+    if (xlvalue == 0) {
+      joint25.write(joint2curpos - 5);
+      joint2curpos -= 5;
+    } 
+    if (xlvalue == 1023) {
+      joint25.write(joint2curpos + 5);
+      joint2curpos += 5;
+    }
+
+  //right joystick
+    int xrvalue = 0; 
+    int yrvalue = 0;
+    xrvalue = analogRead(A2);  
+    yrvalue = analogRead(A3);
+    pushrvalue = analogRead(10)
+    //base 
+    if (yrvalue == 0) {
+      claw7.write(clawcurpos + 5);
+      clawcurpos += 5;
+    } 
+    if (yrvalue == 1023) {
+      claw7.write(clawcurpos - 5);
+      clawcurpos -= 5;
+    }
+
+    //joint 2
+    if (xrvalue == 0) {
+      joint36.write(joint3curpos + 5);
+      joint3curpos += 5;
+    } 
+    if (xrvalue == 1023) {
+      joint36.write(joint3curpos - 5);
+      joint3curpos -= 5;
+    }
+  
+  delay(15); 
 }
+
 ```
 
 # Bill of Materials
