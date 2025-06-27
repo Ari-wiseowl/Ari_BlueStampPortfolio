@@ -1,5 +1,6 @@
 # Three Joint Robotic Arm
 A robotic arm that moves when someone uses the joystick. The servos in the robotic arm spin so that the robotic arm can move in three ways, four including the claw.
+
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
 | Ari S | The Harker School | Computer Science | Incoming Eighth Grader
