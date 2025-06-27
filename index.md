@@ -1,5 +1,5 @@
 # Three Joint Robotic Arm
-//KSIIBIIDI
+A robotic arm that moves when someone uses the joystick.
 
 | **Engineer** | **School** | **Area of Interest** | **Grade** |
 |:--:|:--:|:--:|:--:|
