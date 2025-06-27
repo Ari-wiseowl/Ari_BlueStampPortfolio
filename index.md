@@ -6,7 +6,7 @@
 | Ari S | The Harker School | Computer Science | Incoming Eighth Grader
 
 # Main Project Picture:
-![Headstone Image](mainProjectPictures.HEIC)
+![Headstone Image](mainProjectPictures(1).png)
 
 # Final Milestone
 
