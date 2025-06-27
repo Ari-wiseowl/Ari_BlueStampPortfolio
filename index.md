@@ -10,7 +10,7 @@
 
 # Final Milestone
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/F7M7imOVGug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j33U-BX4AIM?si=925eJknJvDAqI6om" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
 To make sure that the joystick accually controls the robot arm, I had to make code. I coded my code per joystick. I coded the left joystick first, which controls motor of the base and the second joint. I coded it so that if I turn the joystick left and right it twists the base left and right, and if I turn the joystick up and down, the second joint bends down and up. Then I coded the right joystick which controls thrid joint and the claw. The left and right movements control the claw and the up and down movements control the third joint. First I had problems connecting my computer to my arduino nano board, so I had to replace the USB-A TO USB-C adapter becuase it was not working.
