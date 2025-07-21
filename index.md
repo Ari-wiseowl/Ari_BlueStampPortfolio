@@ -146,94 +146,112 @@ Servo baseservo4;
 Servo joint25;
 Servo joint36;
 Servo claw7;
-//int curpos; I don't think this does anything but just to make sure im commenting it out
+//int curpos; I don't think this does anything but just to make be im commenting it out
 int countl = 0;
 
-void setup() { 
+void setup() {
+  pinMode(2, INPUT_PULLUP);
   baseservo4.attach(4);
-  joint25.attach(5); 
+  joint25.attach(5);
   joint36.attach(6);
   claw7.attach(7);
-} 
+}
 
-void dance() {
-  baseservo4.write(90); //set all the motors to the origional position so it is easier to move the robotic arm
-  joint25.write(90); //this is not affected if the button is pressed to make it stop or not
-  joint36.write(90);
-  claw7.write(90)
-  
+void dance() {         //dance code
+  joint25.write(135);  //this is not affected if the button is pressed to make it stop or not
+  joint2curpos = 135;
+  joint36.write(45);
+  joint3curpos = 45;
+  claw7.write(90);
+  clawcurpos = 90;
   if (countl % 2 == 1) {
-    for (int i = 90) {
-      //ddd
+    baseservo4.write(180);  //set all the motors to the left possition position so it is easier to move the robotic arm
+    basecurpos = 180;
+    for (int i = 0; i <= 90; i += 5) {
+      baseservo4.write(180 - i);
+
+      if (i <= 45) {
+        joint36.write(i+90);
+      } //else {
+        //joint36.write(i-90)
+      //}
+      
+      delay(15);
     }
     baseservo4.write(90);
     countl++;
+  } else {
+    baseservo4.write(90);
   }
 }
 
-void loop(){
+void loop() {
+  int value = 0;
   baseservo4.write(basecurpos);
   joint25.write(joint2curpos);
   joint36.write(joint3curpos);
   claw7.write(clawcurpos);
 
   //left joystick
-    int xlvalue = 0; 
-    int ylvalue = 0;
-    xlvalue = analogRead(A0);  
-    Serial.println(xlvalue);
-    ylvalue = analogRead(A1);
-    Serial.println(ylvalue);
-    pushlvalue = analogRead(11)
-    //base 
+  int xlvalue = 0;
+  int ylvalue = 0;
+  xlvalue = analogRead(A0);
+  Serial.println(xlvalue);
+  ylvalue = analogRead(A1);
+  Serial.println(ylvalue);
+    //base
     if (ylvalue == 0) {
-      baseservo4.write(basecurpos - 5);
-      basecurpos -= 5;
-    } 
-    if (ylvalue == 1023) {
-      baseservo4.write(basecurpos + 5);
-      basecurpos += 5;
-    }
+    baseservo4.write(basecurpos - 5);
+    basecurpos -= 5;
+  }
+  if (ylvalue == 1023) {
+    baseservo4.write(basecurpos + 5);
+    basecurpos += 5;
+  }
 
     //joint 2
-    if (xlvalue == 0) {
-      joint25.write(joint2curpos - 5);
-      joint2curpos -= 5;
-    } 
-    if (xlvalue == 1023) {
-      joint25.write(joint2curpos + 5);
-      joint2curpos += 5;
-    }
+  if (xlvalue == 0) {
+    joint25.write(joint2curpos - 5);
+    joint2curpos -= 5;
+  }
+  if (xlvalue == 1023) {
+    joint25.write(joint2curpos + 5);
+    joint2curpos += 5;
+  }
 
   //right joystick
-    int xrvalue = 0; 
-    int yrvalue = 0;
-    xrvalue = analogRead(A2);  
-    yrvalue = analogRead(A3);
-    pushrvalue = analogRead(10)
-    //base 
-    if (yrvalue == 0) {
-      claw7.write(clawcurpos + 5);
-      clawcurpos += 5;
-    } 
-    if (yrvalue == 1023) {
-      claw7.write(clawcurpos - 5);
-      clawcurpos -= 5;
-    }
+  int xrvalue = 0;
+  int yrvalue = 0;
+  xrvalue = analogRead(A2);
+  yrvalue = analogRead(A3);
+    //claw
+  if (yrvalue == 0) {
+    claw7.write(clawcurpos + 5);
+    clawcurpos += 5;
+  }
+  if (yrvalue == 1023) {
+    claw7.write(clawcurpos - 5);
+    clawcurpos -= 5;
+  }
 
-    //joint 2
-    if (xrvalue == 0) {
-      joint36.write(joint3curpos + 5);
-      joint3curpos += 5;
-    } 
-    if (xrvalue == 1023) {
-      joint36.write(joint3curpos - 5);
-      joint3curpos -= 5;
-    }
-  
-  delay(15); 
+  //joint 3
+  if (xrvalue == 0) {
+    joint36.write(joint3curpos + 5);
+    joint3curpos += 5;
+  }
+  if (xrvalue == 1023) {
+    joint36.write(joint3curpos - 5);
+    joint3curpos -= 5;
+  }
+
+  //button dance
+  value = digitalRead(2);
+  if (value == 0) {
+    dance();
+  }
+
+  delay(100);
 }
-
 ```
 
 # Bill of Materials
