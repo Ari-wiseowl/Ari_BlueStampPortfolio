@@ -146,10 +146,12 @@ Servo baseservo4;
 Servo joint25;
 Servo joint36;
 Servo claw7;
+bool danceon = false;
 //int curpos; I don't think this does anything but just to make be im commenting it out
-int countl = 0;
+//int countl = 0; I don;t htink i need this either
 
 void setup() {
+  Serial.begin(9600); 
   pinMode(2, INPUT_PULLUP);
   baseservo4.attach(4);
   joint25.attach(5);
@@ -158,32 +160,121 @@ void setup() {
 }
 
 void dance() {         //dance code
-  joint25.write(135);  //this is not affected if the button is pressed to make it stop or not
-  joint2curpos = 135;
-  joint36.write(45);
-  joint3curpos = 45;
+  //baseservo4.write(90);
+  //basecurpos = 90;
+  joint25.write(90);
+  joint2curpos = 90;
+  joint36.write(90);
+  joint3curpos = 90;
+  //joint25.write(45);  //this is not affected if the button is pressed to make it stop or not
+  //joint2curpos = 45;
+  //joint36.write(135);
+  //joint3curpos = 135;
   claw7.write(90);
   clawcurpos = 90;
-  if (countl % 2 == 1) {
-    baseservo4.write(180);  //set all the motors to the left possition position so it is easier to move the robotic arm
+  if (danceon) {
+    baseservo4.write(180);  //set all the motors to the left position so it is easier to move the robotic arm
     basecurpos = 180;
-    for (int i = 0; i <= 90; i += 5) {
-      baseservo4.write(180 - i);
+    delay(10);
+    while(danceon = true) {
+      for (int i = 0; i <= 90; i += 4) {
+        baseservo4.write(180 - i);
+        basecurpos = 180 - i;
+        delay(10);
 
-      if (i <= 45) {
-        joint36.write(i+90);
-      } //else {
-        //joint36.write(i-90)
-      //}
-      
-      delay(15);
+        joint25.write(90-(i/2));
+        joint2curpos = 90-(i/2);
+        delay(10);
+
+        joint36.write(90+(i/2));
+        joint3curpos = 90+(i/2);
+        
+        int value;
+        value = digitalRead(2);
+        if (value == 0) {
+          while (digitalRead(2) == 0) {
+            delay(10);
+          }
+          danceon = !danceon;
+          return;
+        }
+        delay(15);
+      }
+      for (int i = 0; i <= 90; i += 4) {
+        baseservo4.write(90 - i);
+        basecurpos = 90 - i;
+        delay(10);
+
+        joint25.write(45+(i/2));
+        joint2curpos = 45+(i/2);
+        delay(10);
+
+        joint36.write(135-(i/2));
+        joint3curpos = 135-(i/2);
+        
+        int value;
+        value = digitalRead(2);
+        if (value == 0) {
+          while (digitalRead(2) == 0) {
+            delay(10);
+          }
+          danceon = !danceon;
+          return;
+        }
+        delay(15);
+      }
+      for (int i = 0; i <= 90; i += 4) {
+        baseservo4.write(0 + i);
+        basecurpos = 0 + i;
+        delay(10);
+
+        joint25.write(90-(i/2));
+        joint2curpos = 90-(i/2);
+        delay(10);
+
+        joint36.write(90+(i/2));
+        joint3curpos = 90+(i/2);
+        
+        int value;
+        value = digitalRead(2);
+        if (value == 0) {
+          while (digitalRead(2) == 0) {
+            delay(10);
+          }
+          danceon = !danceon;
+          return;
+        }
+        delay(15);
+      }
+      for (int i = 0; i <= 90; i += 4) {
+        baseservo4.write(90 + i);
+        basecurpos = 90 + i;
+        delay(10);
+
+        joint25.write(45 + (i/2));
+        joint2curpos = 45 + (i/2);
+        delay(10);
+
+        joint36.write(135-(i/2));
+        joint3curpos = 135-(i/2);
+        
+        int value;
+        value = digitalRead(2);
+        if (value == 0) {
+          while (digitalRead(2) == 0) {
+            delay(10);
+          }
+          danceon = !danceon;
+          return;
+        }
+        delay(15);
+      }
     }
-    baseservo4.write(90);
-    countl++;
   } else {
     baseservo4.write(90);
   }
 }
+
 
 void loop() {
   int value = 0;
@@ -200,7 +291,7 @@ void loop() {
   ylvalue = analogRead(A1);
   Serial.println(ylvalue);
     //base
-    if (ylvalue == 0) {
+  if (ylvalue == 0) {
     baseservo4.write(basecurpos - 5);
     basecurpos -= 5;
   }
@@ -247,11 +338,16 @@ void loop() {
   //button dance
   value = digitalRead(2);
   if (value == 0) {
+    while (digitalRead(2) == 0) {
+      delay(10);
+    }
+    danceon = !danceon;
     dance();
   }
 
-  delay(100);
+  delay (15);
 }
+
 ```
 
 # Bill of Materials
