@@ -24,10 +24,11 @@ pinMode(2, INPUT_PULLUP);
 //instead of
 pinMode(2, INPUT);
 ```
-This time, it worked a little bit: when I was pressing the button, it outputed 1, and when I was not, it outputed 0. However, sometimes it randomly outputed 1. That was when I decided to use seperate buttons instead of the built in buttons on the joystick. When I tried out the regular buttons, it acually worked! After that, I worked on the code for my first dance.
+This time, it worked a little bit: when I was pressing the button, it outputted 1, and when I was not, it outputted 0. However, sometimes it randomly outputs 1. That was when I decided to use separate buttons instead of the built-in buttons on the joystick. When I tried out the regular buttons, it worked! After that, I worked on the code for my first dance.
 
 **Dance 1**
 
+kl
 ## Next Steps
 **Preparing for Demo Night**
 - Make the Robot Dance with the Joystick button
