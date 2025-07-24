@@ -17,13 +17,15 @@ For my modifications, I decided to code my robotic arm to dance in two different
 
 ## Challenges
 **Buttons**
+
 First, I tried to use the joystick buttons to control when and which dance to run, but I could not get the button to act properly. I connected the SW pin on the joystick to the digital 11 pin. To test if it works when the button is pressed, I made the result of the digital read print on the Serial. That did not work; it read 0 the entire time, whether or not I pressed the button or not. Then, I kept on switching which digital pin the joystick is ouputing to, but I still got the same result. Then, I tried to use:
 ```
 pinMode(2, INPUT_PULLUP);
 //instead of
 pinMode(2, INPUT);
 ```
-This time, it worked a little bit: when I was pressing the button, it outputed 1, and when I was not, it outputed 0. However, sometimes it randomly outputed 1. That was when I decided to use seperate buttons instead of the built in buttons on the joystick. When I tried out the regular buttons, it acually worked! After that, I worked on the code for my first dance
+This time, it worked a little bit: when I was pressing the button, it outputed 1, and when I was not, it outputed 0. However, sometimes it randomly outputed 1. That was when I decided to use seperate buttons instead of the built in buttons on the joystick. When I tried out the regular buttons, it acually worked! After that, I worked on the code for my first dance.
+
 **Dance 1**
 
 ## Next Steps
