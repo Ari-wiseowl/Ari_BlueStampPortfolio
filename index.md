@@ -13,6 +13,30 @@ A robotic arm that moves when someone uses the joystick. The servos in the robot
 <iframe width="560" height="315" src="https://www.youtube.com/embed/j33U-BX4AIM?si=925eJknJvDAqI6om" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Description
+For my modifications, I decided to code my robotic arm to dance in two different ways. One way, it moves from the left to the right, dipping its head in between. The second dance moves the robotic arm left, bopping its "head" twice, and then moving it to the right, doing the same. Instead of using the buttons on the joysticks, I decided to use regular buttons, because the joystick buttons were not working and it was only outputting a digital low. First, while testing the buttons and implementing it into my robotic arm, I used a breadboard to hold my buttons so that I could easily take the buttons off and/or on if I needed to change the wiring. Later, when I made sure the wiring and the buttons worked, I used a perfboard and soldered my buttons and wires on so that they were permanent.
+
+## Challenges
+**Buttons**
+First, I tried to use the joystick buttons to control when and which dance to run, but I could not get the button to act properly. I connected the SW pin on the joystick to the digital 11 pin. To test if it works when the button is pressed, I made the result of the digital read print on the Serial. That did not work; it read 0 the entire time, whether or not I pressed the button or not. Then, I kept on switching which digital pin the joystick is ouputing to, but I still got the same result. Then, I tried to use:
+```
+pinMode(2, INPUT_PULLUP);
+//instead of
+pinMode(2, INPUT);
+```
+This time, it worked a little bit: when I was pressing the button, it outputed 1, and when I was not, it outputed 0. However, sometimes it randomly outputed 1. That was when I decided to use seperate buttons instead of the built in buttons on the joystick. When I tried out the regular buttons, it acually worked! After that, I worked on the code for my first dance
+**Dance 1**
+
+## Next Steps
+**Preparing for Demo Night**
+- Make the Robot Dance with the Joystick button
+- I also want to control it with my computer (if I type "Dance" on the terminal, the robot starts dancing
+- Add googly eyes on the claw so that it the eyes get wider apart when the claw opens.
+
+# Final Milestone
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/j33U-BX4AIM?si=925eJknJvDAqI6om" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+## Description
 To make sure that the joystick accually controls the robot arm, I had to make code. I coded my code per joystick. I coded the left joystick first, which controls motor of the base and the second joint. I coded it so that if I turn the joystick left and right it twists the base left and right, and if I turn the joystick up and down, the second joint bends down and up. Then I coded the right joystick which controls thrid joint and the claw. The left and right movements control the claw and the up and down movements control the third joint. First I had problems connecting my computer to my arduino nano board, so I had to replace the USB-A TO USB-C adapter becuase it was not working.
 
 ## Challenges
