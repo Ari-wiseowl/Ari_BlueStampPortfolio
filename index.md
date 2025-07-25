@@ -27,13 +27,14 @@ pinMode(2, INPUT);
 This time, it worked a little bit: when I was pressing the button, it outputted 1, and when I was not, it outputted 0. However, sometimes it randomly outputs 1. That was when I decided to use separate buttons instead of the built-in buttons on the joystick. When I tried out the regular buttons, it worked! After that, I worked on the code for my first dance.
 
 **Dance 1**
+While coding the first dance for my robot, I struggled to get all the motors to move at the same time. At first, I tried writing the motor commands one after the other, but they ran one by one instead of together. I realized I needed a way to control them simultaneously rather than sequentially. After some trial and error, I figured out that using a while loop allowed me to run all the motor commands in sync. Once I implemented the loop correctly, the robot was finally able to perform the dance smoothly with all parts moving together.
 
-kl
+**Dance 2**
+While coding the second dance, I ran into an issue where the robot kept getting stuck in the first half of the routine. No matter what I changed, it never moved on to the second part of the dance. After checking my code closely, I realized the problem was in my for loop declaration. I had written ```int i``` without setting it equal to 0, so the loop wasn't starting properly. Once I changed it to ````int i = 0```, the dance worked perfectly from start to finish.
+
 ## Next Steps
-**Preparing for Demo Night**
-- Make the Robot Dance with the Joystick button
-- I also want to control it with my computer (if I type "Dance" on the terminal, the robot starts dancing
-- Add googly eyes on the claw so that it the eyes get wider apart when the claw opens.
+**What I would do if I had more time**
+I want to improve my robot by reducing its glitches through better software calibration and smoother motor control. I also plan to add a human recognition system using cameras and sensors to accurately detect and track human movement. This will allow the robot arm to mimic or respond to human motions for more cool modifications.
 
 # Final Milestone
 
@@ -43,7 +44,7 @@ kl
 To make sure that the joystick accually controls the robot arm, I had to make code. I coded my code per joystick. I coded the left joystick first, which controls motor of the base and the second joint. I coded it so that if I turn the joystick left and right it twists the base left and right, and if I turn the joystick up and down, the second joint bends down and up. Then I coded the right joystick which controls thrid joint and the claw. The left and right movements control the claw and the up and down movements control the third joint. First I had problems connecting my computer to my arduino nano board, so I had to replace the USB-A TO USB-C adapter becuase it was not working.
 
 ## Challenges
-I had trouble connecting my arduino nano to my computer becuase my computer kept on disconnecting from the port. First I changed out my wire connecting my arduino and my computer, but that did not change anything. Then, I changed out the adapter, and it suddently started connecting. Therefore, I was able to implement my code to the arduino so that I could control the robotic arm using the joystick.
+I had trouble connecting my arduino nano to my computer because my computer kept on disconnecting from the port. First I changed out my wire connecting my arduino and my computer, but that did not change anything. Then, I changed out the adapter, and it suddenly started connecting. Therefore, I was able to implement my code to the arduino so that I could control the robotic arm using the joystick.
 
 After I completed my first revision of my code, the robot could not move left or down if the clamp has already been closed. To fix that I had to switch up the direction of the clamp so that instead of the right movement closing the clamp, the left movement closes it. After that revision was implemented, the robot could move seamlessly without any problems.
 
