@@ -30,7 +30,7 @@ This time, it worked a little bit: when I was pressing the button, it outputted 
 While coding the first dance for my robot, I struggled to get all the motors to move at the same time. At first, I tried writing the motor commands one after the other, but they ran one by one instead of together. I realized I needed a way to control them simultaneously rather than sequentially. After some trial and error, I figured out that using a while loop allowed me to run all the motor commands in sync. Once I implemented the loop correctly, the robot was finally able to perform the dance smoothly with all parts moving together.
 
 **Dance 2**
-While coding the second dance, I ran into an issue where the robot kept getting stuck in the first half of the routine. No matter what I changed, it never moved on to the second part of the dance. After checking my code closely, I realized the problem was in my for loop declaration. I had written ```int i``` without setting it equal to 0, so the loop wasn't starting properly. Once I changed it to ````int i = 0```, the dance worked perfectly from start to finish.
+While coding the second dance, I ran into an issue where the robot kept getting stuck in the first half of the routine. No matter what I changed, it never moved on to the second part of the dance. After checking my code closely, I realized the problem was in my for loop declaration. I had written ```int i``` without setting it equal to 0, so the loop wasn't starting properly. Once I changed it to ```int i = 0```, the dance worked perfectly from start to finish.
 
 ## Next Steps
 **What I would do if I had more time**
